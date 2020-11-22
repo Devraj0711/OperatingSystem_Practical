@@ -3,10 +3,9 @@
 #include<stdlib.h>
 #include<sys/types.h>
 #include<sys/stat.h>
-//#include<fcltl.h>
 void copy(int,int);
 void display(int);
-main(int argc,char *argv[])
+int main(int argc,char *argv[])
 {
 int fold,fnew;
 if(argc!=3)
@@ -14,7 +13,7 @@ if(argc!=3)
 printf("Two Arguments Required");
 exit(1);
 }
-fold=popen(argv[1],0);
+fold=open(argv[1],0);
 if(fold==-1)
 {
 printf("Unable to Open the File\n%s",argv[1]);
